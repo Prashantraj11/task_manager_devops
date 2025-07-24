@@ -1,0 +1,25 @@
+body {
+    background: #f8fafc;
+    min-height: 100vh;
+}
+.card {
+    border-radius: 1rem;
+}
+#taskInput:focus {
+    box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
+}
+#taskList .list-group-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.2s;
+}
+#taskList .list-group-item.completed {
+    text-decoration: line-through;
+    color: #6c757d;
+    background: #e9ecef;
+}
+#taskList .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+}
