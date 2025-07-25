@@ -7,8 +7,8 @@ on:
     branches: [ main ]
 
 env:
-  DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
-  DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
+  DOCKER_HUB_USERNAME: ${{ secrets.zyrix5 }}
+  DOCKER_HUB_TOKEN: ${{ secrets.dckr_pat_YzXhm7zDOQVhigeUl_NpYuowiew }}
 
 jobs:
   test:
@@ -72,7 +72,7 @@ jobs:
     
     - name: Deploy to Kubernetes
       run: |
-        sed -i 's|your-dockerhub-username|${{ secrets.DOCKER_HUB_USERNAME }}|g' k8s/app-deployment.yaml
+        sed -i 's|your-dockerhub-username|${{ secrets.zyrix5 }}|g' k8s/app-deployment.yaml
         kubectl apply -f k8s/namespace.yaml
         kubectl apply -f k8s/mongo-deployment.yaml
         kubectl apply -f k8s/app-deployment.yaml
