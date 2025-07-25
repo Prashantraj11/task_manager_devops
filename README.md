@@ -16,6 +16,34 @@ A full-stack Task Manager application with a modern frontend, RESTful backend, M
 
 ---
 
+## System Architecture
+
+```mermaid
+flowchart TD
+    %% ─────────── Client ───────────
+    subgraph Client
+        U[User]
+    end
+
+    %% ───────── Front-end (port 3001) ─────────
+    subgraph Frontend
+        FE[Next.js App\n(port 3001)]
+    end
+
+    %% ───────── Back-end (port 4000) ─────────
+    subgraph Backend
+        BE[Node API\n(port 4000)]
+    end
+
+    %% ─────────── Database ───────────
+    DB[(PostgreSQL)]
+
+    %% ───────────── Edges ─────────────
+    U  -- "HTTP" --> FE
+    FE -- "REST API" --> BE
+    BE -- "SQL" --> DB
+```
+
 - **Frontend:** Next.js app running on port 3001.
 - **Backend:** Node.js API running on port 4000.
 - **Database:** PostgreSQL for persistent storage.
