@@ -72,13 +72,8 @@ jobs:
     
     - name: Deploy to Kubernetes
       run: |
-        # Update image in deployment
         sed -i 's|your-dockerhub-username|${{ secrets.DOCKER_HUB_USERNAME }}|g' k8s/app-deployment.yaml
-        
-        # Apply Kubernetes manifests
         kubectl apply -f k8s/namespace.yaml
         kubectl apply -f k8s/mongo-deployment.yaml
         kubectl apply -f k8s/app-deployment.yaml
-        
-        # Wait for deployment
         kubectl rollout status deployment/task-manager-app -n task-manager

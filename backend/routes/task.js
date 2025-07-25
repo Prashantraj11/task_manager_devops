@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Task = require('../models/task');
 
-// Get all tasks
 router.get('/tasks', async (req, res) => {
   try {
     const tasks = await Task.find().sort({ createdAt: -1 });
@@ -12,7 +11,6 @@ router.get('/tasks', async (req, res) => {
   }
 });
 
-// Add a new task
 router.post('/tasks', async (req, res) => {
   try {
     const { title } = req.body;
@@ -25,7 +23,6 @@ router.post('/tasks', async (req, res) => {
   }
 });
 
-// Mark task as completed
 router.put('/tasks/:id', async (req, res) => {
   try {
     const { id } = req.params;
