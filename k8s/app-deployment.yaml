@@ -71,7 +71,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: your-dockerhub-username/task-manager-frontend:latest
+        image: zyrix5/task-manager-frontend:latest
         ports:
         - containerPort: 80
         volumeMounts:

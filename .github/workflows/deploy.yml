@@ -53,7 +53,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/task-manager:latest
+        tags: ${{ secrets.z }}/task-manager:latest
         cache-from: type=gha
         cache-to: type=gha,mode=max
 
